@@ -1,0 +1,99 @@
+﻿@model IEnumerable<DetyraMVC_Programimi_WEB.Models.Student>
+
+@{
+    ViewBag.Title = "Index";
+}
+    
+    <style>
+        a{
+            text-decoration:none;
+        }
+        img{
+            width:50%; 
+            height:50%;
+        }
+       
+    </style>
+   
+
+<h2>Student Registration</h2>
+<div class="container">
+    <div class="row">
+        <img src="~/Images/undraw_personal_info_0okl.png" alt="personalInfo" />
+    </div>
+</div>
+
+
+<h2 style="margin-top:10%">Client</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+
+   
+    <table class="table table-hover">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FatherName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Birthdate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FatherName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Birthdate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.StudentID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.StudentID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.StudentID })
+                </td>
+            </tr>
+        }
+
+    </table>
+
